@@ -1,0 +1,37 @@
+{
+  "name": "ecotourism-maharashtra",
+  "version": "1.0.0",
+  "description": "Smart Digital Platform for Eco and Cultural Tourism in Maharashtra",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "echo \"Build complete!\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eco-tourism",
+    "maharashtra",
+    "travel",
+    "sustainable",
+    "cultural",
+    "tourism"
+  ],
+  "author": "EcoTourism Maharashtra",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "mongoose": "^7.0.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.0",
+    "body-parser": "^1.20.2",
+    "nodemailer": "^6.9.1",
+    "stripe": "^11.0.0",
+    "express-validator": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

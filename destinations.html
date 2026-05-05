@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - EcoTourism Maharashtra</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>EcoTourism Maharashtra</span>
+                </div>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
+                    <li><a href="experiences.html" class="nav-link">Experiences</a></li>
+                    <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-content">
+            <h1>Discover Maharashtra's Hidden Gems</h1>
+            <p>Explore authentic eco-tourism destinations across the state</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <input type="text" id="searchInput" placeholder="Search destinations..." class="filter-input">
+                <select id="filterType" class="filter-input">
+                    <option value="">All Types</option>
+                    <option value="mountain">Mountain</option>
+                    <option value="wildlife">Wildlife</option>
+                    <option value="heritage">Heritage</option>
+                    <option value="adventure">Adventure</option>
+                </select>
+                <select id="filterDifficulty" class="filter-input">
+                    <option value="">All Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Grid -->
+    <section class="destinations-section">
+        <div class="container">
+            <div class="destinations-list" id="destinationsList">
+                <!-- Destination 1 -->
+                <div class="destination-detail-card" data-type="mountain" data-difficulty="moderate">
+                    <div class="dest-image">
+                        <i class="fas fa-mountain"></i>
+                        <div class="dest-badge">Mountain</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Lonavala & Khandala</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 65 km from Pune</span>
+                            <span class="difficulty moderate"><i class="fas fa-chart-line"></i> Moderate</span>
+                        </div>
+                        <p class="dest-description">Experience misty mountain peaks, stunning waterfalls, and ancient caves. Perfect for trekking and rock climbing enthusiasts.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Waterfalls</span>
+                            <span><i class="fas fa-check-circle"></i> Trekking</span>
+                            <span><i class="fas fa-check-circle"></i> Photography</span>
+                            <span><i class="fas fa-check-circle"></i> Adventure Sports</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.8 (245 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 2 -->
+                <div class="destination-detail-card" data-type="heritage" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-gopuram"></i>
+                        <div class="dest-badge">Heritage</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Ajanta & Ellora Caves</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 350 km from Pune</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">UNESCO World Heritage site with 1500-year-old carved caves featuring intricate Buddhist, Hindu, and Jain sculptures.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Heritage Sites</span>
+                            <span><i class="fas fa-check-circle"></i> Art & Culture</span>
+                            <span><i class="fas fa-check-circle"></i> Guided Tours</span>
+                            <span><i class="fas fa-check-circle"></i> History Lessons</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.9 (312 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 3 -->
+                <div class="destination-detail-card" data-type="wildlife" data-difficulty="moderate">
+                    <div class="dest-image">
+                        <i class="fas fa-tree"></i>
+                        <div class="dest-badge">Wildlife</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Tadoba Andhari National Park</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 85 km from Nagpur</span>
+                            <span class="difficulty moderate"><i class="fas fa-chart-line"></i> Moderate</span>
+                        </div>
+                        <p class="dest-description">Maharashtra's finest tiger sanctuary. Experience jungle safaris, birdwatching, and encounter diverse wildlife in their natural habitat.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Tiger Safari</span>
+                            <span><i class="fas fa-check-circle"></i> Birdwatching</span>
+                            <span><i class="fas fa-check-circle"></i> Wildlife Photography</span>
+                            <span><i class="fas fa-check-circle"></i> Jungle Experience</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.7 (189 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 4 -->
+                <div class="destination-detail-card" data-type="mountain" data-difficulty="hard">
+                    <div class="dest-image">
+                        <i class="fas fa-water"></i>
+                        <div class="dest-badge">Mountain</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Western Ghats Trek</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 100+ km route</span>
+                            <span class="difficulty hard"><i class="fas fa-chart-line"></i> Hard</span>
+                        </div>
+                        <p class="dest-description">Challenging multi-day trek through India's biodiversity hotspot. Explore dense forests, rare species, and pristine waterfalls.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Long Trek</span>
+                            <span><i class="fas fa-check-circle"></i> Biodiversity</span>
+                            <span><i class="fas fa-check-circle"></i> Forest Camping</span>
+                            <span><i class="fas fa-check-circle"></i> Wildlife Spotting</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.6 (156 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 5 -->
+                <div class="destination-detail-card" data-type="adventure" data-difficulty="moderate">
+                    <div class="dest-image">
+                        <i class="fas fa-person-hiking"></i>
+                        <div class="dest-badge">Adventure</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Raigad Fort Trek</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 50 km from Pune</span>
+                            <span class="difficulty moderate"><i class="fas fa-chart-line"></i> Moderate</span>
+                        </div>
+                        <p class="dest-description">Historic hill fort with panoramic views of the Sahyadri ranges. Explore ancient architecture and enjoy breathtaking sunsets.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Fort Trek</span>
+                            <span><i class="fas fa-check-circle"></i> History</span>
+                            <span><i class="fas fa-check-circle"></i> Panoramic Views</span>
+                            <span><i class="fas fa-check-circle"></i> Sunset Point</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.8 (267 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 6 -->
+                <div class="destination-detail-card" data-type="heritage" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-gopuram"></i>
+                        <div class="dest-badge">Heritage</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Mahabaleshwar Hill Station</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 120 km from Pune</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">Serene hill station with strawberry farms, viewpoints, and artisan villages. Perfect for a relaxing eco-friendly getaway.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Strawberry Farms</span>
+                            <span><i class="fas fa-check-circle"></i> Viewpoints</span>
+                            <span><i class="fas fa-check-circle"></i> Artisan Markets</span>
+                            <span><i class="fas fa-check-circle"></i> Nature Trails</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.7 (198 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 7 - Imagicaa -->
+                <div class="destination-detail-card" data-type="adventure" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-dice"></i>
+                        <div class="dest-badge">Adventure</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Imagicaa Theme Park</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 45 km from Pune (Khed)</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">World-class theme park with thrilling rides, cultural shows, and family entertainment. Home to India's longest roller coaster.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Thrilling Rides</span>
+                            <span><i class="fas fa-check-circle"></i> Water Park</span>
+                            <span><i class="fas fa-check-circle"></i> Cultural Shows</span>
+                            <span><i class="fas fa-check-circle"></i> Family Fun</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.5 (156 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 8 - Gateway of India Mumbai -->
+                <div class="destination-detail-card" data-type="heritage" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-gopuram"></i>
+                        <div class="dest-badge">Heritage</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Mumbai - Gateway of India</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> South Mumbai</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">Iconic monument, colonial architecture, and vibrant city culture. Experience Mumbai's rich history and bustling street life.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Iconic Monument</span>
+                            <span><i class="fas fa-check-circle"></i> Colonial Architecture</span>
+                            <span><i class="fas fa-check-circle"></i> Star Ferry</span>
+                            <span><i class="fas fa-check-circle"></i> City Culture</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.7 (412 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 9 - Marine Drive -->
+                <div class="destination-detail-card" data-type="adventure" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-water"></i>
+                        <div class="dest-badge">Adventure</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Marine Drive - Queen's Necklace</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> Mumbai</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">Scenic seaside promenade with stunning sunset views and authentic local street food. A must-visit Mumbai attraction.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Sunset Views</span>
+                            <span><i class="fas fa-check-circle"></i> Street Food</span>
+                            <span><i class="fas fa-check-circle"></i> Beach Walk</span>
+                            <span><i class="fas fa-check-circle"></i> Photography</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.6 (289 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 10 - Sanjay Gandhi National Park -->
+                <div class="destination-detail-card" data-type="wildlife" data-difficulty="moderate">
+                    <div class="dest-image">
+                        <i class="fas fa-tree"></i>
+                        <div class="dest-badge">Wildlife</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Sanjay Gandhi National Park</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> Mumbai</span>
+                            <span class="difficulty moderate"><i class="fas fa-chart-line"></i> Moderate</span>
+                        </div>
+                        <p class="dest-description">Urban forest within the city with trekking trails, waterfalls, and wildlife sanctuary. Leopards and diverse fauna thrive here.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Trekking Trails</span>
+                            <span><i class="fas fa-check-circle"></i> Waterfalls</span>
+                            <span><i class="fas fa-check-circle"></i> Wildlife Safari</span>
+                            <span><i class="fas fa-check-circle"></i> Caves</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.4 (198 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 11 - Nashik Wine Valley -->
+                <div class="destination-detail-card" data-type="heritage" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-wine-glass-alt"></i>
+                        <div class="dest-badge">Heritage</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Nashik Wine Valley</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 190 km from Pune</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">Vineyard tours, wine tasting, and cultural experiences. Experience India's premier wine region with expert guides and tastings.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Wine Tasting</span>
+                            <span><i class="fas fa-check-circle"></i> Vineyard Tours</span>
+                            <span><i class="fas fa-check-circle"></i> Gourmet Dining</span>
+                            <span><i class="fas fa-check-circle"></i> Resort Stays</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.6 (223 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 12 - Sula Vineyards -->
+                <div class="destination-detail-card" data-type="heritage" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-wine-glass-alt"></i>
+                        <div class="dest-badge">Heritage</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Sula Vineyards</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> Nashik</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">Premium wine tasting, farm stays, and gourmet dining experiences. Award-winning vineyard with world-class hospitality.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Wine Cellar Tours</span>
+                            <span><i class="fas fa-check-circle"></i> Farm Stays</span>
+                            <span><i class="fas fa-check-circle"></i> Fine Dining</span>
+                            <span><i class="fas fa-check-circle"></i> Workshops</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.7 (267 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 13 - Panchgani -->
+                <div class="destination-detail-card" data-type="mountain" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-mountain"></i>
+                        <div class="dest-badge">Mountain</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Panchgani Hill Station</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 100 km from Pune</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">Scenic plateau surrounded by five hills with adventure activities and strawberry farms. Perfect for families and adventure seekers.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Table Land Trek</span>
+                            <span><i class="fas fa-check-circle"></i> Strawberry Farms</span>
+                            <span><i class="fas fa-check-circle"></i> Paragliding</span>
+                            <span><i class="fas fa-check-circle"></i> Adventure Activities</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.5 (134 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 14 - Shirdi -->
+                <div class="destination-detail-card" data-type="heritage" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-gopuram"></i>
+                        <div class="dest-badge">Heritage</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Shirdi Sai Baba Temple</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 250 km from Pune</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">Sacred pilgrimage site with spiritual experiences and cultural tours. One of India's most visited and revered temples.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Temple Visits</span>
+                            <span><i class="fas fa-check-circle"></i> Spiritual Experiences</span>
+                            <span><i class="fas fa-check-circle"></i> Cultural Tours</span>
+                            <span><i class="fas fa-check-circle"></i> Pilgrimage</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.8 (524 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 15 - Konkan Coast Alibaug -->
+                <div class="destination-detail-card" data-type="adventure" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-water"></i>
+                        <div class="dest-badge">Adventure</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Konkan Coast - Alibaug</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 50 km from Mumbai</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">Beach destination with water sports, historic forts, and authentic coastal cuisine. Perfect beach getaway from Mumbai.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Water Sports</span>
+                            <span><i class="fas fa-check-circle"></i> Forts & History</span>
+                            <span><i class="fas fa-check-circle"></i> Seafood Cuisine</span>
+                            <span><i class="fas fa-check-circle"></i> Beach Activities</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.6 (245 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 16 - Kolhapur -->
+                <div class="destination-detail-card" data-type="heritage" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-gopuram"></i>
+                        <div class="dest-badge">Heritage</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Kolhapur City Heritage Tour</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 235 km from Pune</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">Ancient temples, royal palaces, and traditional Kolhapuri culture. Experience centuries-old traditions and craftsmanship.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Ancient Temples</span>
+                            <span><i class="fas fa-check-circle"></i> Royal Palaces</span>
+                            <span><i class="fas fa-check-circle"></i> Kolhapuri Chappals</span>
+                            <span><i class="fas fa-check-circle"></i> Cultural Tours</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.4 (167 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 17 - Sindhudurg Fort -->
+                <div class="destination-detail-card" data-type="adventure" data-difficulty="moderate">
+                    <div class="dest-image">
+                        <i class="fas fa-gopuram"></i>
+                        <div class="dest-badge">Adventure</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Sindhudurg Fort Trek</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 350 km from Pune</span>
+                            <span class="difficulty moderate"><i class="fas fa-chart-line"></i> Moderate</span>
+                        </div>
+                        <p class="dest-description">Sea fort with historical significance and adventurous boat ride to the island. Built by Shivaji and beautifully preserved.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Sea Fort Trek</span>
+                            <span><i class="fas fa-check-circle"></i> Boat Ride</span>
+                            <span><i class="fas fa-check-circle"></i> Historical Significance</span>
+                            <span><i class="fas fa-check-circle"></i> Adventure</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.5 (123 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 18 - Shaniwar Wada -->
+                <div class="destination-detail-card" data-type="heritage" data-difficulty="easy">
+                    <div class="dest-image">
+                        <i class="fas fa-gopuram"></i>
+                        <div class="dest-badge">Heritage</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Shaniwar Wada Fort Pune</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> Pune City</span>
+                            <span class="difficulty easy"><i class="fas fa-chart-line"></i> Easy</span>
+                        </div>
+                        <p class="dest-description">Ancient Marathi stronghold with impressive architecture and light and sound show. A testament to Marathi glory and power.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Historic Fort</span>
+                            <span><i class="fas fa-check-circle"></i> Light & Sound Show</span>
+                            <span><i class="fas fa-check-circle"></i> Architecture</span>
+                            <span><i class="fas fa-check-circle"></i> Museum</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.6 (345 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 19 - Dandeli -->
+                <div class="destination-detail-card" data-type="wildlife" data-difficulty="moderate">
+                    <div class="dest-image">
+                        <i class="fas fa-water"></i>
+                        <div class="dest-badge">Wildlife</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Dandeli Wildlife Sanctuary</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 380 km from Pune</span>
+                            <span class="difficulty moderate"><i class="fas fa-chart-line"></i> Moderate</span>
+                        </div>
+                        <p class="dest-description">River rafting, jungle safaris, and adventure activities in pristine wilderness. Home to diverse flora and fauna.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> River Rafting</span>
+                            <span><i class="fas fa-check-circle"></i> Jungle Safari</span>
+                            <span><i class="fas fa-check-circle"></i> Wildlife Spotting</span>
+                            <span><i class="fas fa-check-circle"></i> Adventure Sports</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.5 (189 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 20 - Aurangabad -->
+                <div class="destination-detail-card" data-type="heritage" data-difficulty="moderate">
+                    <div class="dest-image">
+                        <i class="fas fa-gopuram"></i>
+                        <div class="dest-badge">Heritage</div>
+                    </div>
+                    <div class="dest-details">
+                        <h3>Aurangabad Historic Circle</h3>
+                        <div class="dest-meta">
+                            <span class="distance"><i class="fas fa-location-dot"></i> 340 km from Pune</span>
+                            <span class="difficulty moderate"><i class="fas fa-chart-line"></i> Moderate</span>
+                        </div>
+                        <p class="dest-description">Ancient Mughal architecture, Bibi ka Maqbara, and comprehensive historical tours. Gateway to Ajanta and Ellora caves.</p>
+                        <div class="dest-highlights">
+                            <span><i class="fas fa-check-circle"></i> Mughal Architecture</span>
+                            <span><i class="fas fa-check-circle"></i> Historical Tours</span>
+                            <span><i class="fas fa-check-circle"></i> Museums</span>
+                            <span><i class="fas fa-check-circle"></i> Cave Access</span>
+                        </div>
+                        <div class="dest-footer">
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.7 (278 reviews)
+                            </div>
+                            <a href="booking.html" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>EcoTourism Maharashtra</h3>
+                    <p>Promoting sustainable and cultural tourism for a better future.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Travel Tips</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</p>
+                    <p><i class="fas fa-phone"></i> +91 8765 432 1098</p>
+                    <p><i class="fas fa-envelope"></i> info@ecotourism.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoTourism Maharashtra. All rights reserved. | Promoting Sustainable Tourism</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/destinations.js"></script>
+</body>
+</html>

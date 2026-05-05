@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Adventure - EcoTourism Maharashtra</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>EcoTourism Maharashtra</span>
+                </div>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                    <li><a href="experiences.html" class="nav-link">Experiences</a></li>
+                    <li><a href="booking.html" class="nav-link active">Book Now</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-content">
+            <h1>Book Your Adventure</h1>
+            <p>Simple, secure, and transparent booking process</p>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-form-wrapper">
+                    <h2>Customize Your Package</h2>
+                    <form id="bookingForm" class="booking-form">
+                        <!-- Personal Information -->
+                        <fieldset class="form-section">
+                            <legend><i class="fas fa-user"></i> Your Information</legend>
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="age">Age *</label>
+                                    <input type="number" id="age" name="age" min="18" max="120" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nationality">Nationality *</label>
+                                    <input type="text" id="nationality" name="nationality" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Tour Details -->
+                        <fieldset class="form-section">
+                            <legend><i class="fas fa-calendar"></i> Tour Details</legend>
+                            <div class="form-group">
+                                <label for="destination">Select Destination *</label>
+                                <select id="destination" name="destination" required>
+                                    <option value="">-- Choose a destination --</option>
+                                    <option value="lonavala">Lonavala & Khandala</option>
+                                    <option value="ajanta">Ajanta & Ellora Caves</option>
+                                    <option value="tadoba">Tadoba National Park</option>
+                                    <option value="western-ghats">Western Ghats Trek</option>
+                                    <option value="raigad">Raigad Fort Trek</option>
+                                    <option value="mahabaleshwar">Mahabaleshwar</option>
+                                    <option value="imagicaa">Imagicaa Theme Park</option>
+                                    <option value="gateway-of-india">Mumbai - Gateway of India</option>
+                                    <option value="marine-drive">Marine Drive - Queen's Necklace</option>
+                                    <option value="sanjay-gandhi">Sanjay Gandhi National Park</option>
+                                    <option value="nashik-wine">Nashik Wine Valley</option>
+                                    <option value="sula-vineyards">Sula Vineyards</option>
+                                    <option value="panchgani">Panchgani Hill Station</option>
+                                    <option value="shirdi">Shirdi Sai Baba Temple</option>
+                                    <option value="konkan-coast">Konkan Coast - Alibaug</option>
+                                    <option value="kolhapur">Kolhapur City Heritage Tour</option>
+                                    <option value="sindhudurg">Sindhudurg Fort Trek</option>
+                                    <option value="shaniwar-wada">Shaniwar Wada Fort Pune</option>
+                                    <option value="dandeli">Dandeli Wildlife Sanctuary</option>
+                                    <option value="aurangabad">Aurangabad Historic Circle</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="experience">Select Experience *</label>
+                                <select id="experience" name="experience" required>
+                                    <option value="">-- Choose an experience --</option>
+                                    <option value="trekking">Guided Mountain Trekking</option>
+                                    <option value="safari">Wildlife Safari</option>
+                                    <option value="culinary">Culinary Tour</option>
+                                    <option value="community">Community Stay</option>
+                                    <option value="photography">Photography Tour</option>
+                                    <option value="cultural">Cultural Workshop</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="startDate">Start Date *</label>
+                                    <input type="date" id="startDate" name="startDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="duration">Duration (Days) *</label>
+                                    <select id="duration" name="duration" required>
+                                        <option value="">-- Select duration --</option>
+                                        <option value="1">1 Day</option>
+                                        <option value="2">2 Days / 1 Night</option>
+                                        <option value="3">3 Days / 2 Nights</option>
+                                        <option value="5">5 Days / 4 Nights</option>
+                                        <option value="7">7 Days / 6 Nights</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Group Details -->
+                        <fieldset class="form-section">
+                            <legend><i class="fas fa-users"></i> Group Details</legend>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adults">Number of Adults *</label>
+                                    <input type="number" id="adults" name="adults" min="1" value="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="children">Number of Children</label>
+                                    <input type="number" id="children" name="children" min="0" value="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="seniors">Number of Seniors</label>
+                                    <input type="number" id="seniors" name="seniors" min="0" value="0">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Accommodations & Meals -->
+                        <fieldset class="form-section">
+                            <legend><i class="fas fa-hotel"></i> Preferences</legend>
+                            <div class="form-group">
+                                <label>Accommodation Type *</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="accommodation" value="budget" checked>
+                                        Budget Eco-Lodge
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="accommodation" value="comfort">
+                                        Comfort Resort
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="accommodation" value="luxury">
+                                        Luxury Resort
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Meal Plan *</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="meals" value="breakfast" checked>
+                                        Breakfast Only
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="meals" value="half-board">
+                                        Half Board (B & D)
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="meals" value="full-board">
+                                        Full Board (All Meals)
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Special Requests -->
+                        <fieldset class="form-section">
+                            <legend><i class="fas fa-star"></i> Special Requests</legend>
+                            <div class="form-group">
+                                <label for="specialRequests">Any dietary restrictions or special needs?</label>
+                                <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="e.g., Vegetarian, Allergy information, Physical limitations..."></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Terms & Conditions -->
+                        <fieldset class="form-section">
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> *</label>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Send me updates and special offers</label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-large">Proceed to Payment</button>
+                        <p class="form-note">* Required fields</p>
+                    </form>
+                </div>
+
+                <!-- Booking Summary -->
+                <div class="booking-summary">
+                    <h3>Booking Summary</h3>
+                    <div class="summary-item">
+                        <span>Package:</span>
+                        <strong id="summaryPackage">-</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Duration:</span>
+                        <strong id="summaryDuration">-</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Travelers:</span>
+                        <strong id="summaryTravelers">-</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Start Date:</span>
+                        <strong id="summaryDate">-</strong>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-price">
+                        <span>Estimated Total:</span>
+                        <strong id="summaryPrice">₹0</strong>
+                    </div>
+                    <p class="summary-note">Final price will be calculated based on your selections and any applicable discounts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Why Book With Us?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>100% Secure</h3>
+                    <p>Safe and encrypted payment gateway for peace of mind</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Best Price Guarantee</h3>
+                    <p>Find it cheaper elsewhere? We'll match the price</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-undo"></i>
+                    <h3>Free Cancellation</h3>
+                    <p>Cancel up to 7 days before for full refund</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated customer service team always available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>EcoTourism Maharashtra</h3>
+                    <p>Promoting sustainable and cultural tourism for a better future.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="experiences.html">Experiences</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Travel Tips</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</p>
+                    <p><i class="fas fa-phone"></i> +91 8765 432 1098</p>
+                    <p><i class="fas fa-envelope"></i> info@ecotourism.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoTourism Maharashtra. All rights reserved. | Promoting Sustainable Tourism</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/booking.js"></script>
+</body>
+</html>
