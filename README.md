@@ -258,10 +258,10 @@ This project is licensed under the MIT License - see LICENSE file for details.
 
 ## 👥 Team
 
-- **Rajesh Sharma** - Founder & CEO
-- **Priya Desai** - Operations Manager
-- **Arjun Kulkarni** - CTO
-- **Maya Patel** - Community Liaison
+- **Shreya Singh Senger** - Founder & CEO
+- **Shroojan Dhok** - Operations Manager
+- **Shreyan Jadhav** - CTO
+- **Amartya** - Community Liaison
 
 ## 🙏 Acknowledgments
 
