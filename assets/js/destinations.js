@@ -1,127 +1,47 @@
-/* ===================================
-   DESTINATIONS PAGE FUNCTIONALITY
-   =================================== */
-
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('searchInput');
-    const filterType = document.getElementById('filterType');
-    const filterDifficulty = document.getElementById('filterDifficulty');
-    const destinationsList = document.getElementById('destinationsList');
-
-    if (searchInput && destinationsList) {
-        // Store original destinations
-        const destinations = Array.from(destinationsList.querySelectorAll('.destination-detail-card'));
-
-        // Search functionality
-        searchInput.addEventListener('keyup', debounce(filterDestinations, 300));
-
-        // Filter by type
-        if (filterType) {
-            filterType.addEventListener('change', filterDestinations);
+const DestinationsApp = {
+    init: function() {
+        if (!$('#destinationsList').length) return;
+        
+        if (!$('style[data-destinations]').length) {
+            $('<style>', { 'data-destinations': '', text: `@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }` }).appendTo('head');
         }
 
-        // Filter by difficulty
-        if (filterDifficulty) {
-            filterDifficulty.addEventListener('change', filterDestinations);
-        }
+        $('#searchInput').on('keyup', utils.debounce(this.filter.bind(this), 300));
+        $('#filterType, #filterDifficulty').on('change', this.filter.bind(this));
+    },
 
-        function filterDestinations() {
-            const searchTerm = searchInput.value.toLowerCase();
-            const typeFilter = filterType.value;
-            const difficultyFilter = filterDifficulty.value;
+    filter: function() {
+        const search = $('#searchInput').val().toLowerCase();
+        const type = $('#filterType').val();
+        const diff = $('#filterDifficulty').val();
+        let count = 0;
 
-            let visibleCount = 0;
+        $('.destination-detail-card').each(function() {
+            const $d = $(this);
+            const matchesSearch = $d.find('h3').text().toLowerCase().includes(search) || $d.find('.dest-description').text().toLowerCase().includes(search);
+            const matchesType = !type || String($d.data('type')) === type;
+            const matchesDiff = !diff || String($d.data('difficulty')) === diff;
 
-            destinations.forEach(destination => {
-                const title = destination.querySelector('h3').textContent.toLowerCase();
-                const description = destination.querySelector('.dest-description').textContent.toLowerCase();
-                const type = destination.dataset.type;
-                const difficulty = destination.dataset.difficulty;
-
-                // Check search
-                const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
-
-                // Check type filter
-                const matchesType = !typeFilter || type === typeFilter;
-
-                // Check difficulty filter
-                const matchesDifficulty = !difficultyFilter || difficulty === difficultyFilter;
-
-                // Show or hide
-                if (matchesSearch && matchesType && matchesDifficulty) {
-                    destination.style.display = 'block';
-                    destination.style.animation = 'fadeIn 0.3s ease';
-                    visibleCount++;
-                } else {
-                    destination.style.display = 'none';
-                }
-            });
-
-            // Show message if no results
-            if (visibleCount === 0) {
-                let message = destinationsList.querySelector('.no-results');
-                if (!message) {
-                    message = document.createElement('div');
-                    message.className = 'no-results';
-                    message.style.cssText = `
-                        text-align: center;
-                        padding: 60px 20px;
-                        color: #7f8c8d;
-                        grid-column: 1 / -1;
-                    `;
-                    destinationsList.appendChild(message);
-                }
-                message.innerHTML = `
-                    <i class="fas fa-search" style="font-size: 50px; margin-bottom: 20px; display: block; color: #bdc3c7;"></i>
-                    <h3>No destinations found</h3>
-                    <p>Try adjusting your filters or search terms</p>
-                `;
+            if (matchesSearch && matchesType && matchesDiff) {
+                $d.css({ display: 'block', animation: 'fadeIn 0.3s ease' });
+                count++;
             } else {
-                const noResults = destinationsList.querySelector('.no-results');
-                if (noResults) {
-                    noResults.remove();
-                }
+                $d.css('display', 'none');
             }
+        });
 
-            // Track filter event
-            utils.trackEvent('filter_destinations', {
-                search: searchTerm,
-                type: typeFilter,
-                difficulty: difficultyFilter,
-                results: visibleCount
-            });
+        if (count === 0) {
+            if (!$('.no-results').length) {
+                $('<div>', { class: 'no-results', css: { textAlign: 'center', padding: '60px 20px', color: '#7f8c8d', gridColumn: '1 / -1' } })
+                    .html(`<i class="fas fa-search" style="font-size: 50px; margin-bottom: 20px; display: block; color: #bdc3c7;"></i><h3>No destinations found</h3><p>Try adjusting your filters or search terms</p>`)
+                    .appendTo('#destinationsList');
+            }
+        } else {
+            $('.no-results').remove();
         }
 
-        // Add animation styles
-        if (!document.querySelector('style[data-destinations]')) {
-            const style = document.createElement('style');
-            style.setAttribute('data-destinations', '');
-            style.textContent = `
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                        transform: translateY(10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-        }
+        utils.trackEvent('filter_destinations', { search, type, difficulty: diff, results: count });
     }
-});
+};
 
-// Helper function from main.js
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
+$(document).ready(() => DestinationsApp.init());
