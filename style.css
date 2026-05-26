@@ -1,6 +1,4 @@
-/* ===================================
-   VARIABLES & ROOT STYLES
-   =================================== */
+
 
 :root {
     --primary-color: #2ecc71;
@@ -17,9 +15,7 @@
     --transition: all 0.3s ease;
 }
 
-/* ===================================
-   GLOBAL STYLES
-   =================================== */
+
 
 * {
     margin: 0;
@@ -44,9 +40,7 @@ body {
     padding: 0 20px;
 }
 
-/* ===================================
-   TYPOGRAPHY
-   =================================== */
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
@@ -75,9 +69,7 @@ a:hover {
     color: var(--secondary-color);
 }
 
-/* ===================================
-   BUTTONS
-   =================================== */
+
 
 .btn {
     padding: 12px 30px;
@@ -124,9 +116,7 @@ a:hover {
     width: 100%;
 }
 
-/* ===================================
-   NAVIGATION BAR
-   =================================== */
+
 
 .navbar {
     background-color: var(--white);
@@ -212,9 +202,7 @@ a:hover {
     transition: var(--transition);
 }
 
-/* ===================================
-   HERO SECTION
-   =================================== */
+
 
 .hero {
     position: relative;
@@ -296,9 +284,7 @@ a:hover {
     }
 }
 
-/* ===================================
-   STATS SECTION
-   =================================== */
+
 
 .stats {
     background-color: var(--white);
@@ -326,9 +312,7 @@ a:hover {
     font-size: 1rem;
 }
 
-/* ===================================
-   ABOUT SECTION
-   =================================== */
+
 
 .about {
     padding: 80px 0;
@@ -379,9 +363,7 @@ a:hover {
     opacity: 0.8;
 }
 
-/* ===================================
-   FEATURED SECTION
-   =================================== */
+
 
 .featured {
     padding: 80px 0;
@@ -458,9 +440,7 @@ a:hover {
     margin-top: 3rem;
 }
 
-/* ===================================
-   EXPERIENCE TYPES SECTION
-   =================================== */
+
 
 .experiences-preview {
     padding: 80px 0;
@@ -504,9 +484,7 @@ a:hover {
     font-size: 0.95rem;
 }
 
-/* ===================================
-   TESTIMONIALS SECTION
-   =================================== */
+
 
 .testimonials {
     padding: 80px 0;
@@ -578,9 +556,7 @@ a:hover {
     font-size: 0.9rem;
 }
 
-/* ===================================
-   NEWSLETTER SECTION
-   =================================== */
+
 
 .newsletter {
     padding: 60px 0;
@@ -630,9 +606,7 @@ a:hover {
     background-color: #c0392b;
 }
 
-/* ===================================
-   FOOTER
-   =================================== */
+
 
 .footer {
     background-color: var(--dark-bg);
@@ -705,9 +679,7 @@ a:hover {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* ===================================
-   PAGE HEADER
-   =================================== */
+
 
 .page-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -726,9 +698,7 @@ a:hover {
     font-size: 1.2rem;
 }
 
-/* ===================================
-   DESTINATIONS DETAIL
-   =================================== */
+
 
 .filter-section {
     padding: 40px 0;
@@ -892,9 +862,7 @@ a:hover {
     margin-right: 3px;
 }
 
-/* ===================================
-   EXPERIENCES GALLERY
-   =================================== */
+
 
 .experiences-gallery {
     padding: 60px 0;
@@ -991,9 +959,7 @@ a:hover {
     gap: 5px;
 }
 
-/* ===================================
-   PACKAGE DEALS
-   =================================== */
+
 
 .package-deals {
     padding: 80px 0;
@@ -1104,9 +1070,7 @@ a:hover {
     font-weight: 400;
 }
 
-/* ===================================
-   BOOKING SECTION
-   =================================== */
+
 
 .booking-section {
     padding: 60px 0;
@@ -1291,9 +1255,7 @@ a:hover {
     margin-top: 1rem;
 }
 
-/* ===================================
-   CONTACT SECTION
-   =================================== */
+
 
 .contact-info-section {
     padding: 60px 0;
@@ -1375,9 +1337,7 @@ a:hover {
     color: var(--text-dark);
 }
 
-/* ===================================
-   FAQ SECTION
-   =================================== */
+
 
 .faq-section {
     padding: 60px 0;
@@ -1417,9 +1377,7 @@ a:hover {
     color: var(--text-light);
 }
 
-/* ===================================
-   WHY CHOOSE US
-   =================================== */
+
 
 .why-choose-us {
     padding: 80px 0;
@@ -1466,9 +1424,7 @@ a:hover {
     color: var(--text-light);
 }
 
-/* ===================================
-   UTILITY CLASSES
-   =================================== */
+
 
 .text-center {
     text-align: center;
