@@ -1,7 +1,3 @@
-/* ===================================
-   SERVER CONFIGURATION - EXPRESS.JS
-   =================================== */
-
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -10,22 +6,15 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// ===================================
-// ROUTES
-// ===================================
-
-// Home route
 app.get('/', (req, res) => {
     res.json({ message: 'EcoTourism Maharashtra API Server Running' });
 });
 
-// Health check
 app.get('/api/health', (req, res) => {
     res.json({
         status: 'OK',
@@ -34,11 +23,6 @@ app.get('/api/health', (req, res) => {
     });
 });
 
-// ===================================
-// DESTINATIONS API
-// ===================================
-
-// Mock destinations data
 const destinations = [
     {
         id: 1,
@@ -262,7 +246,6 @@ const destinations = [
     }
 ];
 
-// Get all destinations
 app.get('/api/destinations', (req, res) => {
     const { type, difficulty, search } = req.query;
     let filtered = [...destinations];
@@ -288,7 +271,6 @@ app.get('/api/destinations', (req, res) => {
     });
 });
 
-// Get single destination
 app.get('/api/destinations/:id', (req, res) => {
     const destination = destinations.find(d => d.id === parseInt(req.params.id));
 
@@ -305,10 +287,6 @@ app.get('/api/destinations/:id', (req, res) => {
     });
 });
 
-// ===================================
-// EXPERIENCES API
-// ===================================
-
 const experiences = [
     { id: 1, name: 'Guided Mountain Trekking', category: 'adventure', price: 1500, duration: '1-5 days' },
     { id: 2, name: 'Wildlife Safari', category: 'nature', price: 2000, duration: '1-3 days' },
@@ -318,7 +296,6 @@ const experiences = [
     { id: 6, name: 'Cultural Workshops', category: 'culture', price: 800, duration: '1 day' }
 ];
 
-// Get all experiences
 app.get('/api/experiences', (req, res) => {
     res.json({
         success: true,
@@ -339,15 +316,9 @@ app.get('/api/experiences/category/:category', (req, res) => {
     });
 });
 
-// ===================================
-// BOOKING API
-// ===================================
-
-// Mock bookings database
 let bookings = [];
 let bookingIdCounter = 1;
 
-// Create booking
 app.post('/api/bookings', (req, res) => {
     try {
         const {
@@ -366,7 +337,6 @@ app.post('/api/bookings', (req, res) => {
             specialRequests
         } = req.body;
 
-        // Basic validation
         if (!fullName || !email || !phone || !destination || !experience || !startDate || !duration) {
             return res.status(400).json({
                 success: false,
@@ -374,7 +344,6 @@ app.post('/api/bookings', (req, res) => {
             });
         }
 
-        // Create booking
         const booking = {
             id: bookingIdCounter++,
             fullName,
@@ -427,7 +396,6 @@ app.get('/api/bookings/:id', (req, res) => {
     });
 });
 
-// Get all bookings (protected - would need auth in production)
 app.get('/api/bookings', (req, res) => {
     res.json({
         success: true,
@@ -436,20 +404,13 @@ app.get('/api/bookings', (req, res) => {
     });
 });
 
-// ===================================
-// CONTACT API
-// ===================================
-
-// Mock contacts database
 let contacts = [];
 let contactIdCounter = 1;
 
-// Submit contact form
 app.post('/api/contact', (req, res) => {
     try {
         const { name, email, phone, subject, message } = req.body;
 
-        // Validation
         if (!name || !email || !subject || !message) {
             return res.status(400).json({
                 success: false,
@@ -457,7 +418,6 @@ app.post('/api/contact', (req, res) => {
             });
         }
 
-        // Simple email validation
         const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
         if (!emailRegex.test(email)) {
             return res.status(400).json({
@@ -466,7 +426,6 @@ app.post('/api/contact', (req, res) => {
             });
         }
 
-        // Create contact entry
         const contact = {
             id: contactIdCounter++,
             name,
@@ -480,7 +439,6 @@ app.post('/api/contact', (req, res) => {
 
         contacts.push(contact);
 
-        // In production, you would send an email here using nodemailer
         console.log('New contact submission:', contact);
 
         res.status(201).json({
@@ -496,9 +454,6 @@ app.post('/api/contact', (req, res) => {
     }
 });
 
-// ===================================
-// NEWSLETTER API
-// ===================================
 
 let subscribers = [];
 
